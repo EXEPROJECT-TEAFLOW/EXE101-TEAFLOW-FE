@@ -1,15 +1,16 @@
 import React from "react"
 import "./App.css"
 import { Header } from "./components/ui/header-2"
-
+import { Component } from "@/components/ui/background-components";
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
  
 
   return (
     <div className="w-full">
+            
 			<Header />
-
+            <Component />
 			<main className="mx-auto min-h-screen w-full max-w-3xl px-4 py-12">
 				<div  className="space-y-2 mb-4">
 					<div className="bg-accent h-6 w-4/6 rounded-md border" />
