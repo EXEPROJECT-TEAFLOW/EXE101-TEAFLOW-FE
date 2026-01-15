@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState, useEffect, useRef } from 'react';
 import './HomePage.css';
 import ScrollAnimate from '../animate/ScrollAnimate';
+import { FeatureDemo } from '@/components/Features';
+import FeaturesDetail from '@/components/ui/features-detail';
+import { AnimatedTestimonialsDemo } from '@/components/Profile';
 
 // Helper component để render icon (hỗ trợ cả emoji và ảnh)
-const IconRenderer = ({ icon, iconUrl, alt, className }: { icon?: string; iconUrl?: string; alt?: string; className?: string }) => {
-  if (iconUrl) {
-    return <img src={iconUrl} alt={alt || ''} className={className} />;
-  }
-  return <span className={className}>{icon}</span>;
-};
+
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,6 +55,8 @@ const HomePage = () => {
     },
   ];
 
+    const headingRef = useRef<HTMLHeadingElement>(null)
+      const textRef = useRef<HTMLParagraphElement>(null)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -82,69 +83,69 @@ const HomePage = () => {
     { number: '24/7', label: 'Hỗ trợ' },
   ];
 
-  const features = [
-    {
-      icon: '🛒',
-      title: 'Phân hệ Bán Hàng',
-      description: 'Quản lý đơn hàng, bàn, khách hàng một cách hiệu quả. Tích hợp POS, thanh toán đa kênh, quản lý khuyến mãi, chương trình tích điểm và voucher. Hỗ trợ đặt bàn online, giao hàng tận nơi.',
-    },
-    {
-      icon: '💳',
-      title: 'Phân hệ Thanh Toán',
-      description: 'Hệ thống thanh toán đa dạng: tiền mặt, thẻ ngân hàng, ví điện tử (MoMo, ZaloPay, VNPay), QR code. Tích hợp máy in hóa đơn, xuất hóa đơn điện tử, thanh toán tự động.',
-    },
-    {
-      icon: '📦',
-      title: 'Phân hệ Kho',
-      description: 'Quản lý tồn kho thông minh, cảnh báo hết hàng tự động, tối ưu chi phí lưu trữ. Theo dõi xuất nhập tồn realtime, quản lý nhiều kho, tích hợp với nhà cung cấp, tính giá vốn tự động.',
-    },
-    {
-      icon: '📊',
-      title: 'Phân hệ Báo cáo',
-      description: 'Báo cáo chi tiết doanh thu, chi phí, lợi nhuận theo ngày, tuần, tháng, năm. Dashboard trực quan với biểu đồ, phân tích xu hướng, dự báo nhu cầu, báo cáo theo từng sản phẩm, nhân viên.',
-    },
-    {
-      icon: '👥',
-      title: 'Phân hệ Nhân viên',
-      description: 'Quản lý nhân sự, ca làm việc, chấm công, tính lương tự động. Đánh giá hiệu suất, phân quyền theo chức vụ, quản lý phụ cấp, thưởng, báo cáo hiệu suất làm việc.',
-    },
-    {
-      icon: '👨‍🍳',
-      title: 'Phân hệ Bếp',
-      description: 'Quản lý đơn hàng bếp, ưu tiên món ăn, theo dõi thời gian chế biến. In phiếu bếp tự động, quản lý công thức nấu ăn, tính giá thành món, cảnh báo hết nguyên liệu.',
-    },
-  ];
+  // const features = [
+  //   {
+  //     icon: '🛒',
+  //     title: 'Phân hệ Bán Hàng',
+  //     description: 'Quản lý đơn hàng, bàn, khách hàng một cách hiệu quả. Tích hợp POS, thanh toán đa kênh, quản lý khuyến mãi, chương trình tích điểm và voucher. Hỗ trợ đặt bàn online, giao hàng tận nơi.',
+  //   },
+  //   {
+  //     icon: '💳',
+  //     title: 'Phân hệ Thanh Toán',
+  //     description: 'Hệ thống thanh toán đa dạng: tiền mặt, thẻ ngân hàng, ví điện tử (MoMo, ZaloPay, VNPay), QR code. Tích hợp máy in hóa đơn, xuất hóa đơn điện tử, thanh toán tự động.',
+  //   },
+  //   {
+  //     icon: '📦',
+  //     title: 'Phân hệ Kho',
+  //     description: 'Quản lý tồn kho thông minh, cảnh báo hết hàng tự động, tối ưu chi phí lưu trữ. Theo dõi xuất nhập tồn realtime, quản lý nhiều kho, tích hợp với nhà cung cấp, tính giá vốn tự động.',
+  //   },
+  //   {
+  //     icon: '📊',
+  //     title: 'Phân hệ Báo cáo',
+  //     description: 'Báo cáo chi tiết doanh thu, chi phí, lợi nhuận theo ngày, tuần, tháng, năm. Dashboard trực quan với biểu đồ, phân tích xu hướng, dự báo nhu cầu, báo cáo theo từng sản phẩm, nhân viên.',
+  //   },
+  //   {
+  //     icon: '👥',
+  //     title: 'Phân hệ Nhân viên',
+  //     description: 'Quản lý nhân sự, ca làm việc, chấm công, tính lương tự động. Đánh giá hiệu suất, phân quyền theo chức vụ, quản lý phụ cấp, thưởng, báo cáo hiệu suất làm việc.',
+  //   },
+  //   {
+  //     icon: '👨‍🍳',
+  //     title: 'Phân hệ Bếp',
+  //     description: 'Quản lý đơn hàng bếp, ưu tiên món ăn, theo dõi thời gian chế biến. In phiếu bếp tự động, quản lý công thức nấu ăn, tính giá thành món, cảnh báo hết nguyên liệu.',
+  //   },
+  // ];
 
-  const departments = [
-    {
-      icon: '💻',
-      title: 'Công nghệ',
-      description: 'Đội ngũ phát triển phần mềm chuyên nghiệp, luôn cập nhật công nghệ mới nhất.',
-      count: '25+',
-      label: 'Nhân viên',
-    },
-    {
-      icon: '🎨',
-      title: 'Thiết kế',
-      description: 'Tạo ra giao diện đẹp mắt, trực quan, dễ sử dụng cho người dùng.',
-      count: '8+',
-      label: 'Designers',
-    },
-    {
-      icon: '📱',
-      title: 'Sản phẩm',
-      description: 'Nghiên cứu và phát triển tính năng mới, cải thiện trải nghiệm người dùng.',
-      count: '12+',
-      label: 'Members',
-    },
-    {
-      icon: '🎯',
-      title: 'Kinh doanh',
-      description: 'Tư vấn và hỗ trợ khách hàng, mở rộng thị trường và phát triển đối tác.',
-      count: '15+',
-      label: 'Nhân viên',
-    },
-  ];
+  // const departments = [
+  //   {
+  //     icon: '💻',
+  //     title: 'Công nghệ',
+  //     description: 'Đội ngũ phát triển phần mềm chuyên nghiệp, luôn cập nhật công nghệ mới nhất.',
+  //     count: '25+',
+  //     label: 'Nhân viên',
+  //   },
+  //   {
+  //     icon: '🎨',
+  //     title: 'Thiết kế',
+  //     description: 'Tạo ra giao diện đẹp mắt, trực quan, dễ sử dụng cho người dùng.',
+  //     count: '8+',
+  //     label: 'Designers',
+  //   },
+  //   {
+  //     icon: '📱',
+  //     title: 'Sản phẩm',
+  //     description: 'Nghiên cứu và phát triển tính năng mới, cải thiện trải nghiệm người dùng.',
+  //     count: '12+',
+  //     label: 'Members',
+  //   },
+  //   {
+  //     icon: '🎯',
+  //     title: 'Kinh doanh',
+  //     description: 'Tư vấn và hỗ trợ khách hàng, mở rộng thị trường và phát triển đối tác.',
+  //     count: '15+',
+  //     label: 'Nhân viên',
+  //   },
+  // ];
 
   const featuredServices = [
     {
@@ -185,50 +186,50 @@ const HomePage = () => {
     },
   ];
 
-  const teamMembers = [
-    {
-      name: 'Nguyễn Hoàng Minh Nhật',
-      role: 'CEO & Founder',
-      description: '15 năm kinh nghiệm trong lĩnh vực công nghệ và F&B. Tốt nghiệp ĐH Bách Khoa.',
-      avatar: '👨‍💼',
-      social: { linkedin: '#', email: '#' },
-    },
-    {
-      name: 'Nguyễn Hoàng Phúc Hậu',
-      role: 'CTO',
-      description: 'Chuyên gia công nghệ với 12 năm kinh nghiệm. Từng làm việc tại các công ty công nghệ hàng đầu.',
-      avatar: '👩‍💻',
-      social: { linkedin: '#', email: '#' },
-    },
-    {
-      name: 'Trần Thị Thu Hiền',
-      role: 'Head of Product',
-      description: '10 năm kinh nghiệm trong phát triển sản phẩm SaaS. Đam mê tạo ra trải nghiệm người dùng tuyệt vời.',
-      avatar: '👨‍🎨',
-      social: { linkedin: '#', email: '#' },
-    },
-    {
-      name: 'Lê Mai Trang',
-      role: 'Head of Sales',
-      description: 'Chuyên viên kinh doanh với 8 năm kinh nghiệm. Đã giúp hàng nghìn khách hàng thành công.',
-      avatar: '👩‍💼',
-      social: { linkedin: '#', email: '#' },
-    },
-    {
-      name: 'Trần Công Tâm',
-      role: 'Head of Engineering',
-      description: 'Kỹ sư phần mềm với 10 năm kinh nghiệm. Chuyên về hệ thống quy mô lớn và kiến trúc phần mềm.',
-      avatar: '👨‍🔧',
-      social: { linkedin: '#', email: '#' },
-    },
-    {
-      name: 'Lưu Nguyên Trương',
-      role: 'Head of Design',
-      description: 'Nhà thiết kế UX/UI với 7 năm kinh nghiệm. Tạo ra giao diện đẹp mắt và dễ sử dụng.',
-      avatar: '👩‍🎨',
-      social: { linkedin: '#', email: '#' },
-    },
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: 'Nguyễn Hoàng Minh Nhật',
+  //     role: 'CEO & Founder',
+  //     description: '15 năm kinh nghiệm trong lĩnh vực công nghệ và F&B. Tốt nghiệp ĐH Bách Khoa.',
+  //     avatar: '👨‍💼',
+  //     social: { linkedin: '#', email: '#' },
+  //   },
+  //   {
+  //     name: 'Nguyễn Hoàng Phúc Hậu',
+  //     role: 'CTO',
+  //     description: 'Chuyên gia công nghệ với 12 năm kinh nghiệm. Từng làm việc tại các công ty công nghệ hàng đầu.',
+  //     avatar: '👩‍💻',
+  //     social: { linkedin: '#', email: '#' },
+  //   },
+  //   {
+  //     name: 'Trần Thị Thu Hiền',
+  //     role: 'Head of Product',
+  //     description: '10 năm kinh nghiệm trong phát triển sản phẩm SaaS. Đam mê tạo ra trải nghiệm người dùng tuyệt vời.',
+  //     avatar: '👨‍🎨',
+  //     social: { linkedin: '#', email: '#' },
+  //   },
+  //   {
+  //     name: 'Lê Mai Trang',
+  //     role: 'Head of Sales',
+  //     description: 'Chuyên viên kinh doanh với 8 năm kinh nghiệm. Đã giúp hàng nghìn khách hàng thành công.',
+  //     avatar: '👩‍💼',
+  //     social: { linkedin: '#', email: '#' },
+  //   },
+  //   {
+  //     name: 'Trần Công Tâm',
+  //     role: 'Head of Engineering',
+  //     description: 'Kỹ sư phần mềm với 10 năm kinh nghiệm. Chuyên về hệ thống quy mô lớn và kiến trúc phần mềm.',
+  //     avatar: '👨‍🔧',
+  //     social: { linkedin: '#', email: '#' },
+  //   },
+  //   {
+  //     name: 'Lưu Nguyên Trương',
+  //     role: 'Head of Design',
+  //     description: 'Nhà thiết kế UX/UI với 7 năm kinh nghiệm. Tạo ra giao diện đẹp mắt và dễ sử dụng.',
+  //     avatar: '👩‍🎨',
+  //     social: { linkedin: '#', email: '#' },
+  //   },
+  // ];
 
   const benefits = [
     {
@@ -272,6 +273,7 @@ const HomePage = () => {
 
   const renderSlide = (slide: typeof slides[0], index: number) => {
     const isActive = index === currentSlide;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const slideAny = slide as any;
     
     // Tính toán style cho background
@@ -328,9 +330,9 @@ const HomePage = () => {
                   {slide.subtitle}
                 </h1>
                 <p className="hero-description">{slide.description}</p>
-                <div className="hero-cta">
+                {/* <div className="hero-cta">
                   <a href="/contact" className="btn btn-primary">Dùng thử miễn phí</a>
-                </div>
+                </div> */}
               </div>
               <div className="split-right">
                 {slideAny.imageUrl ? (
@@ -364,14 +366,14 @@ const HomePage = () => {
         return (
           <div key={index} className={`slide banner ${isActive ? 'active' : ''}`} style={getSlideStyle()}>
             <div className="slide-content banner-content">
-              <div className="banner-top">
+            
                 <div className="hero-badge"><span>{slide.badge}</span></div>
                 {slideAny.imageUrl ? (
                   <img src={slideAny.imageUrl} alt={slide.title} className="banner-icon banner-icon-image" />
                 ) : (
                   slideAny.image && <div className="banner-icon">{slideAny.image}</div>
                 )}
-              </div>
+
               <h1 className="hero-title banner-title">
                 {slide.title}
                 <span className="gradient-text"> {slide.highlight}</span>
@@ -483,11 +485,13 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+       
       </section>
 
       {/* Feature Department Section */}
       <section className="departments-section">
-        <div className="section-container">
+       < FeatureDemo />
+        {/* <div className="section-container">
           <ScrollAnimate animation="fade-up" className="section-header">
             <h2 className="section-title">Feature Department</h2>
             <p className="section-description">
@@ -509,69 +513,68 @@ const HomePage = () => {
               </ScrollAnimate>
             ))}
           </div>
-        </div>
+        </div> */}
+        
       </section>
 
       {/* Featured Services Section */}
-      <section className="featured-services-section">
-        <div className="section-container">
-          <ScrollAnimate animation="fade-up" className="section-header">
-            <h2 className="section-title">Featured Services</h2>
-            <p className="section-description">
-              Dịch vụ nổi bật của chúng tôi
-            </p>
-          </ScrollAnimate>
-          <div className="services-grid">
-            {featuredServices.map((service, index) => (
-              <ScrollAnimate key={index} animation="scale-in" delay={index * 0.1}>
-                <div className="service-card" style={{ '--service-color': service.color } as React.CSSProperties}>
-                  <div className="service-icon-wrapper">
-                    {(service as any).iconUrl ? (
-                      <img src={(service as any).iconUrl} alt={service.title} className="service-icon service-icon-image" style={{ background: `${service.color}20` }} />
-                    ) : (
-                      <div className="service-icon" style={{ background: `${service.color}20`, color: service.color }}>
-                        {service.icon}
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="service-title">{service.title}</h3>
-                  <p className="service-description">{service.description}</p>
+      <section className="featured-services-section py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50/50">
+      <div className="section-container container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <ScrollAnimate animation="fade-up" className="section-header text-center mb-12">
+          <h2 className="section-title text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
+            Dịch Vụ Nổi Bật
+          </h2>
+          <p className="section-description text-lg md:text-xl text-muted-foreground mt-4">
+            Những tính năng cốt lõi giúp chủ quán trà sữa vận hành chuyên nghiệp và tăng trưởng nhanh chóng.
+          </p>
+        </ScrollAnimate>
+
+        <div className="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {featuredServices.map((service, index) => (
+            <ScrollAnimate key={index} animation="scale-in" delay={index * 0.1}>
+              <div
+                className="service-card bg-gradient-to-br from-gray-50/40 to-white/10 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 md:p-8 flex flex-col items-center text-center border border-gray-200/30 h-full"
+                style={{ '--service-color': service.color } as React.CSSProperties}
+              >
+                <div className="service-icon-wrapper mb-6">
+                  {(service as any).iconUrl ? (
+                    <img
+                    
+                      alt={service.title}
+                      className="service-icon service-icon-image w-16 h-16 rounded-full object-cover"
+                      style={{ background: `${service.color}20` }}
+                    />
+                  ) : (
+                    <div
+                      className="service-icon w-16 h-16 rounded-full flex items-center justify-center"
+                      style={{ background: `${service.color}20`, color: service.color }}
+                    >
+                      {service.icon}
+                    </div>
+                  )}
                 </div>
-              </ScrollAnimate>
-            ))}
-          </div>
+                <h3 className="service-title text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="service-description text-muted-foreground text-base leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </ScrollAnimate>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Team Members Section */}
       <section className="team-section">
         <div className="section-container">
           <ScrollAnimate animation="fade-up" className="section-header">
-            <h2 className="section-title">Đội ngũ của chúng tôi</h2>
-            <p className="section-description">
-              Những con người tài năng đang xây dựng TEAFLOW
-            </p>
+            
+            <AnimatedTestimonialsDemo />
+            
           </ScrollAnimate>
-          <div className="team-grid">
-            {teamMembers.map((member, index) => (
-              <ScrollAnimate key={index} animation="rotate-in" delay={index * 0.1}>
-                <div className="team-card">
-                  {(member as any).avatarUrl ? (
-                    <img src={(member as any).avatarUrl} alt={member.name} className="team-avatar team-avatar-image" />
-                  ) : (
-                    <div className="team-avatar">{member.avatar}</div>
-                  )}
-                  <h3 className="team-name">{member.name}</h3>
-                  <p className="team-role">{member.role}</p>
-                  <p className="team-description">{member.description}</p>
-                  <div className="team-social">
-                    <a href={member.social.linkedin} className="social-link" aria-label="LinkedIn">💼</a>
-                    <a href={member.social.email} className="social-link" aria-label="Email">✉️</a>
-                  </div>
-                </div>
-              </ScrollAnimate>
-            ))}
-          </div>
+         
         </div>
       </section>
 
@@ -579,22 +582,21 @@ const HomePage = () => {
       <section className="features-section">
         <div className="section-container">
           <ScrollAnimate animation="fade-up" className="section-header">
-            <h2 className="section-title">Tính năng nổi bật</h2>
-            <p className="section-description">
-              Tất cả công cụ bạn cần để vận hành nhà hàng hiệu quả
+            <h1 
+              ref={headingRef}
+              className="text-4xl text-center font-bold tracking-tight sm:text-5xl mb-4"
+            >
+              Hệ thống quản lý <br /> 
+              <span className="gradient-text">thông minh & hiệu quả</span>
+            </h1>
+            <p 
+              ref={textRef}
+              className="mt-4 text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto"
+            >
+              Khám phá các tính năng nổi bật chính giúp TEAFLOW trở thành giải pháp quản lý F&B được yêu thích nhất tại Việt Nam.
             </p>
+          <FeaturesDetail />
           </ScrollAnimate>
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <ScrollAnimate key={index} animation="slide-up" delay={index * 0.1}>
-                <div className="feature-card">
-                  <IconRenderer icon={feature.icon} iconUrl={(feature as any).iconUrl} alt={feature.title} className="feature-icon" />
-                  <h3 className="feature-title">{feature.title}</h3>
-                  <p className="feature-description">{feature.description}</p>
-                </div>
-              </ScrollAnimate>
-            ))}
-          </div>
         </div>
       </section>
 
