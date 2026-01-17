@@ -4,18 +4,10 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-
-  base: "/", // 🔥 BẮT BUỘC CHO VERCEL
-
+  base: "/",
   build: {
-    outDir: "dist", // 🔥 ĐẢM BẢO OUTPUT
+    outDir: "dist",
   },
-
-  server: {
-    host: "0.0.0.0",
-    port: 5173,
-  },
-
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
