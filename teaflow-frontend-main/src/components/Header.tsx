@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -6,12 +7,12 @@ const Header = () => {
   const dropdownRef = useRef<HTMLLIElement>(null);
 
   const productMenuItems = [
-    { name: 'Phân hệ Bán Hàng', path: '/sales' },
-    { name: 'Phân hệ Thanh Toán', path: '/payment' },
-    { name: 'Phân hệ Kho', path: '/warehouse' },
-    { name: 'Phân hệ Báo cáo', path: '/reports' },
-    { name: 'Phân hệ Nhân viên', path: '/employees' },
-    { name: 'Phân hệ Bếp', path: '/kitchen' },
+    { name: 'Phân hệ Bán Hàng', path: '/module/sales' },
+    { name: 'Phân hệ Thanh Toán', path: '/module/payment' },
+    { name: 'Phân hệ Kho', path: '/module/inventory' },
+    { name: 'Phân hệ Báo cáo', path: '/module/reports' },
+    { name: 'Phân hệ Nhân viên', path: '/module/staff' },
+    { name: 'Phân hệ Bếp', path: '/module/kitchen' },
   ];
 
   useEffect(() => {
@@ -32,20 +33,20 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <div className="header-logo">
-          <a href="/" className="logo-link">
+          <Link to="/" className="logo-link">
             <div className="logo-wrapper">
               <span className="logo-text">TEAFLOW</span>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Navigation */}
         <nav className="header-nav">
           <ul className="nav-list">
             <li className="nav-item">
-              <a href="/" className="nav-link">
+              <Link to="/" className="nav-link">
                 Home
-              </a>
+              </Link>
             </li>
 
             {/* Product Dropdown */}
@@ -81,33 +82,34 @@ const Header = () => {
                   onMouseLeave={() => setIsProductMenuOpen(false)}
                 >
                   {productMenuItems.map((item, index) => (
-                    <a
+                    <Link
                       key={index}
-                      href={item.path}
+                      to={item.path}
                       className="dropdown-item"
                       style={{ animationDelay: `${index * 0.05}s` }}
+                      onClick={() => setIsProductMenuOpen(false)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
             </li>
 
             <li className="nav-item">
-              <a href="/features" className="nav-link">
+              <Link to="/features" className="nav-link">
                 Features
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="/about" className="nav-link">
+              <Link to="/about" className="nav-link">
                 AboutUs
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="/contact" className="nav-link">
+              <Link to="/contact" className="nav-link">
                 ContactUs
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

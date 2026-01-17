@@ -3,13 +3,6 @@ import './AboutUs.css';
 import ScrollAnimate from '../animate/ScrollAnimate';
 
 const AboutUs = () => {
-  const stats = [
-    { number: '10+', label: 'Năm kinh nghiệm', icon: '📅' },
-    { number: '500+', label: 'Khách hàng tin tưởng', icon: '👥' },
-    { number: '50+', label: 'Đội ngũ chuyên gia', icon: '💼' },
-    { number: '99%', label: 'Satisfaction Rate', icon: '⭐' },
-  ];
-
   const values = [
     {
       icon: '🎯',
