@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -76,13 +77,13 @@ const Footer = () => {
               <ul className="footer-links">
                 {productLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.path}
+                    <Link
+                      to={link.path}
                       className="footer-link"
                       style={{ animationDelay: `${index * 0.05}s` }}
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -94,13 +95,13 @@ const Footer = () => {
               <ul className="footer-links">
                 {companyLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.path}
+                    <Link
+                      to={link.path}
                       className="footer-link"
                       style={{ animationDelay: `${index * 0.05}s` }}
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -112,13 +113,13 @@ const Footer = () => {
               <ul className="footer-links">
                 {supportLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.path}
+                    <Link
+                      to={link.path}
                       className="footer-link"
                       style={{ animationDelay: `${index * 0.05}s` }}
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -134,13 +135,13 @@ const Footer = () => {
             </p>
             <div className="footer-legal">
               {legalLinks.map((link, index) => (
-                <a
+                <Link
                   key={index}
-                  href={link.path}
+                  to={link.path}
                   className="footer-legal-link"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

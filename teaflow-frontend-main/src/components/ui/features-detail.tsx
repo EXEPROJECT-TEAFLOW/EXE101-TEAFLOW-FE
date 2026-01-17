@@ -144,12 +144,12 @@ export default function FeaturesDetail() {
     )
 
     // Animate tab content
-    gsap.utils.toArray<HTMLElement>(".tabs-content").forEach((content) => {
+    gsap.utils.toArray<HTMLElement>(".tabs-content").forEach((content: HTMLElement) => {
       gsap.set(content, { opacity: 0, y: 20 })
     })
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill())
+      ScrollTrigger.getAll().forEach((t: ScrollTrigger) => t.kill())
     }
   }, [])
 

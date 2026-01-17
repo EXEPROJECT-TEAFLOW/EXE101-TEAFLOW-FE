@@ -36,14 +36,14 @@ const ContactUs = () => {
     {
       icon: '📍',
       title: 'Địa chỉ',
-      content: '123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh',
-      link: '#',
+      content: 'Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh',
+      link: 'https://daihoc.fpt.edu.vn/hcm',
     },
     {
       icon: '📞',
       title: 'Điện thoại',
-      content: '+84 123 456 789',
-      link: 'tel:+84123456789',
+      content: '+84 528677537',
+      link: 'tel:+84528677537',
     },
     {
       icon: '✉️',
@@ -196,16 +196,7 @@ const ContactUs = () => {
               <div className="contact-map-wrapper">
                 <h3 className="contact-map-title">Vị trí văn phòng</h3>
                 <div className="contact-map-container">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.126036839096!2d106.62965431480322!3d10.82300839230507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529439e925141%3A0x814f4b7c09c7b8a3!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBLaG9hIGjDoG5n!5e0!3m2!1svi!2s!4v1234567890123!5m2!1svi!2s"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, borderRadius: '16px' }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Văn phòng TEAFLOW"
-                  />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.610010537023!2d106.80730807458504!3d10.841127589311597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752731176b07b1%3A0xb752b24b379bae5e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBGUFQgVFAuIEhDTQ!5e0!3m2!1svi!2s!4v1768679987936!5m2!1svi!2s" width="600" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <p className="contact-map-note">
                   💡 Bạn có thể kéo và phóng to bản đồ để xem chi tiết hơn

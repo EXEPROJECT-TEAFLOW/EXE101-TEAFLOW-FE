@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd teaflow-frontend-main && npm install && npm run build",
+  "outputDirectory": "teaflow-frontend-main/dist",
+  "installCommand": "cd teaflow-frontend-main && npm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

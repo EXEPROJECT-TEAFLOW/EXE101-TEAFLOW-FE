@@ -72,7 +72,7 @@
 .footer-logo-text {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2F80ED 0%, #1E5FC4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -176,7 +176,7 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2F80ED 0%, #1E5FC4 100%);
   border-radius: 2px;
 }
 
@@ -222,7 +222,7 @@
   left: -20px;
   opacity: 0;
   transition: all 0.3s ease;
-  color: #667eea;
+  color: #2F80ED;
 }
 
 .footer-link:hover {
@@ -278,7 +278,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2F80ED 0%, #1E5FC4 100%);
   transition: width 0.3s ease;
 }
 
