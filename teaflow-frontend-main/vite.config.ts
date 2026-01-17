@@ -1,19 +1,17 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Default to root (/) for deploys on platforms like Vercel.
-  // You can still override this by setting VITE_BASE_PATH in the environment
-  // (for example, when deploying to a sub-path).
-  base: process.env.VITE_BASE_PATH || "/",
-  build: {
-    outDir: "dist",
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
-});
+})
