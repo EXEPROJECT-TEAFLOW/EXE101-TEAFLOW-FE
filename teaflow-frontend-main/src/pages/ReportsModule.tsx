@@ -78,32 +78,34 @@ const ReportsModule = () => {
       <section className="reports-gallery">
         <div className="reports-container">
           {reports.map((report, categoryIndex) => (
-            <ScrollAnimate key={categoryIndex} animation="fade-up" delay={0.15 * categoryIndex}>
-              <div className="reports-category-section">
+            <div key={categoryIndex} className="reports-category-section">
+              <ScrollAnimate animation="fade-up" delay={0.1 * categoryIndex}>
                 <div className="reports-category-header">
-                  <div className="reports-category-icon" style={{ '--category-color': report.color } as React.CSSProperties}>
+                  <div className="reports-category-icon" style={{ backgroundColor: report.color }}>
                     {report.icon}
                   </div>
                   <h2 className="reports-category-title">{report.category}</h2>
                 </div>
-                <div className="reports-masonry-grid">
-                  {report.items.map((item, itemIndex) => (
+              </ScrollAnimate>
+              <div className="reports-gallery-grid">
+                {report.items.map((item, itemIndex) => (
+                  <ScrollAnimate key={itemIndex} animation="scale-in" delay={0.1 * itemIndex}>
                     <div
-                      key={itemIndex}
-                      className={`reports-gallery-item size-${item.size}`}
-                      style={{ '--item-color': report.color } as React.CSSProperties}
+                      className={`reports-gallery-item reports-size-${item.size}`}
+                      style={{ borderLeftColor: report.color }}
                     >
                       <div className="reports-item-content">
-                        <div className="reports-item-number">{itemIndex + 1}</div>
+                        <div className="reports-item-number" style={{ color: report.color }}>
+                          {itemIndex + 1}
+                        </div>
                         <h3 className="reports-item-title">{item.title}</h3>
                         <div className="reports-item-icon">{report.icon}</div>
                       </div>
-                      <div className="reports-item-overlay"></div>
                     </div>
-                  ))}
-                </div>
+                  </ScrollAnimate>
+                ))}
               </div>
-            </ScrollAnimate>
+            </div>
           ))}
         </div>
       </section>
@@ -114,12 +116,14 @@ const ReportsModule = () => {
           <ScrollAnimate animation="fade-up">
             <h2 className="reports-section-title">Tính năng nổi bật</h2>
           </ScrollAnimate>
-          <div className="reports-features-flex">
+          <div className="reports-features-grid">
             {features.map((feature, index) => (
               <ScrollAnimate key={index} animation="scale-in" delay={0.1 * index}>
-                <div className="reports-feature-pill" style={{ '--feature-color': feature.color } as React.CSSProperties}>
-                  <span className="reports-feature-icon">{feature.icon}</span>
-                  <span className="reports-feature-title">{feature.title}</span>
+                <div className="reports-feature-card" style={{ borderColor: feature.color }}>
+                  <div className="reports-feature-icon" style={{ color: feature.color }}>
+                    {feature.icon}
+                  </div>
+                  <div className="reports-feature-title">{feature.title}</div>
                 </div>
               </ScrollAnimate>
             ))}
