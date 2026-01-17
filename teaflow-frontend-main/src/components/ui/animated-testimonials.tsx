@@ -131,20 +131,25 @@ export const AnimatedTestimonials = ({
             </motion.p>
           </motion.div>
 
+
+            
           {/* CONTROLS */}
-          <div className="flex gap-4 pt-12 md:pt-0">
-            <button
-              onClick={handlePrev}
-              className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
-            >
-              <IconArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
-            >
-              <IconArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
-            </button>
+          <div className="flex gap-4 pt-12 ">
+           
+               <button
+            onClick={handlePrev}
+            className="outline rounded-full  flex bg-secondary items-center justify-center">
+  
+              <IconArrowLeft className="h-4 w-4 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
+          </button>
+
+         
+            <button onClick={handlePrev} className="outline rounded-full bg-secondary  flex items-center justify-center">
+              <IconArrowRight className="h-4 w-4 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
+                 </button>
+    
+          
+          
           </div>
         </div>
       </div>

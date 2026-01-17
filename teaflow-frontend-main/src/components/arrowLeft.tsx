@@ -1,7 +1,6 @@
+import React from 'react';
 
-
-
-const ArrowRightIcon = ({
+const ArrowNarrowLeftIcon = ({
   size = undefined,
   color = '#000000',
   strokeWidth = 2,
@@ -40,10 +39,9 @@ const ArrowRightIcon = ({
         backgroundColor: background !== 'transparent' ? background : undefined
       }}
     >
-      <path fill="currentColor" d="M8.146 3.147a.5.5 0 0 1 .63-.065l.078.065l4 4a.5.5 0 0 1 0 .707l-4 4a.5.5 0 1 1-.708-.707L11.293 8H2.5a.5.5 0 0 1 0-1h8.793L8.146 3.854l-.064-.078a.5.5 0 0 1 .064-.63"/>
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width={strokeWidth} d="M5 12h14M5 12l4 4m-4-4l4-4"/>
     </svg>
   );
 };
 
-export default ArrowRightIcon;
-
+export default ArrowNarrowLeftIcon;

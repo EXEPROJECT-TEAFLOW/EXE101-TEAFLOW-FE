@@ -5,6 +5,8 @@ import ScrollAnimate from '../animate/ScrollAnimate';
 import { FeatureDemo } from '@/components/Features';
 import FeaturesDetail from '@/components/ui/features-detail';
 import { AnimatedTestimonialsDemo } from '@/components/Profile';
+import Home from '@/components/FeaturesCard';
+
 
 // Helper component để render icon (hỗ trợ cả emoji và ảnh)
 
@@ -147,44 +149,44 @@ const HomePage = () => {
   //   },
   // ];
 
-  const featuredServices = [
-    {
-      icon: '🚀',
-      title: 'Triển khai nhanh',
-      description: 'Triển khai hệ thống trong 24h, hướng dẫn đầy đủ, hỗ trợ setup tận nơi.',
-      color: '#667eea',
-    },
-    {
-      icon: '🔧',
-      title: 'Bảo trì 24/7',
-      description: 'Hỗ trợ kỹ thuật 24/7, sửa chữa nhanh chóng, đảm bảo hệ thống hoạt động ổn định.',
-      color: '#f5576c',
-    },
-    {
-      icon: '📚',
-      title: 'Đào tạo miễn phí',
-      description: 'Đào tạo nhân viên miễn phí, tài liệu chi tiết, video hướng dẫn đầy đủ.',
-      color: '#4facfe',
-    },
-    {
-      icon: '🔄',
-      title: 'Cập nhật thường xuyên',
-      description: 'Cập nhật tính năng mới miễn phí, cải thiện liên tục dựa trên feedback khách hàng.',
-      color: '#43e97b',
-    },
-    {
-      icon: '📊',
-      title: 'Tư vấn tối ưu',
-      description: 'Tư vấn quy trình, tối ưu hóa hoạt động, nâng cao hiệu quả kinh doanh.',
-      color: '#f093fb',
-    },
-    {
-      icon: '🔒',
-      title: 'Bảo mật cao',
-      description: 'Bảo mật dữ liệu tuyệt đối, backup tự động, tuân thủ quy định bảo mật.',
-      color: '#764ba2',
-    },
-  ];
+  // const featuredServices = [
+  //   {
+  //     icon: '🚀',
+  //     title: 'Triển khai nhanh',
+  //     description: 'Triển khai hệ thống trong 24h, hướng dẫn đầy đủ, hỗ trợ setup tận nơi.',
+  //     color: '#667eea',
+  //   },
+  //   {
+  //     icon: '🔧',
+  //     title: 'Bảo trì 24/7',
+  //     description: 'Hỗ trợ kỹ thuật 24/7, sửa chữa nhanh chóng, đảm bảo hệ thống hoạt động ổn định.',
+  //     color: '#f5576c',
+  //   },
+  //   {
+  //     icon: '📚',
+  //     title: 'Đào tạo miễn phí',
+  //     description: 'Đào tạo nhân viên miễn phí, tài liệu chi tiết, video hướng dẫn đầy đủ.',
+  //     color: '#4facfe',
+  //   },
+  //   {
+  //     icon: '🔄',
+  //     title: 'Cập nhật thường xuyên',
+  //     description: 'Cập nhật tính năng mới miễn phí, cải thiện liên tục dựa trên feedback khách hàng.',
+  //     color: '#43e97b',
+  //   },
+  //   {
+  //     icon: '📊',
+  //     title: 'Tư vấn tối ưu',
+  //     description: 'Tư vấn quy trình, tối ưu hóa hoạt động, nâng cao hiệu quả kinh doanh.',
+  //     color: '#f093fb',
+  //   },
+  //   {
+  //     icon: '🔒',
+  //     title: 'Bảo mật cao',
+  //     description: 'Bảo mật dữ liệu tuyệt đối, backup tự động, tuân thủ quy định bảo mật.',
+  //     color: '#764ba2',
+  //   },
+  // ];
 
   // const teamMembers = [
   //   {
@@ -250,26 +252,26 @@ const HomePage = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: 'Nguyễn Văn A',
-      role: 'Giám đốc Nhà hàng ABC',
-      content: 'TEAFLOW giúp chúng tôi quản lý hiệu quả hơn rất nhiều. Doanh thu tăng 40% sau 3 tháng sử dụng. Giao diện dễ dùng, nhân viên học nhanh.',
-      rating: 5,
-    },
-    {
-      name: 'Trần Thị B',
-      role: 'Chủ chuỗi Café XYZ',
-      content: 'Hệ thống tích hợp đầy đủ, từ bán hàng đến kho, báo cáo. Tiết kiệm thời gian và chi phí đáng kể. Hỗ trợ khách hàng rất tốt.',
-      rating: 5,
-    },
-    {
-      name: 'Lê Văn C',
-      role: 'Quản lý Nhà hàng DEF',
-      content: 'Báo cáo chi tiết giúp tôi đưa ra quyết định kinh doanh đúng đắn. Quản lý kho tự động, không còn lo hết hàng hay lãng phí.',
-      rating: 5,
-    },
-  ];
+  // const testimonials = [
+  //   {
+  //     name: 'Nguyễn Văn A',
+  //     role: 'Giám đốc Nhà hàng ABC',
+  //     content: 'TEAFLOW giúp chúng tôi quản lý hiệu quả hơn rất nhiều. Doanh thu tăng 40% sau 3 tháng sử dụng. Giao diện dễ dùng, nhân viên học nhanh.',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Trần Thị B',
+  //     role: 'Chủ chuỗi Café XYZ',
+  //     content: 'Hệ thống tích hợp đầy đủ, từ bán hàng đến kho, báo cáo. Tiết kiệm thời gian và chi phí đáng kể. Hỗ trợ khách hàng rất tốt.',
+  //     rating: 5,
+  //   },
+  //   {
+  //     name: 'Lê Văn C',
+  //     role: 'Quản lý Nhà hàng DEF',
+  //     content: 'Báo cáo chi tiết giúp tôi đưa ra quyết định kinh doanh đúng đắn. Quản lý kho tự động, không còn lo hết hàng hay lãng phí.',
+  //     rating: 5,
+  //   },
+  // ];
 
   const renderSlide = (slide: typeof slides[0], index: number) => {
     const isActive = index === currentSlide;
@@ -527,42 +529,10 @@ const HomePage = () => {
           <p className="section-description text-lg md:text-xl text-muted-foreground mt-4">
             Những tính năng cốt lõi giúp chủ quán trà sữa vận hành chuyên nghiệp và tăng trưởng nhanh chóng.
           </p>
+         <Home />
         </ScrollAnimate>
 
-        <div className="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {featuredServices.map((service, index) => (
-            <ScrollAnimate key={index} animation="scale-in" delay={index * 0.1}>
-              <div
-                className="service-card bg-gradient-to-br from-gray-50/40 to-white/10 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 md:p-8 flex flex-col items-center text-center border border-gray-200/30 h-full"
-                style={{ '--service-color': service.color } as React.CSSProperties}
-              >
-                <div className="service-icon-wrapper mb-6">
-                  {(service as any).iconUrl ? (
-                    <img
-                    
-                      alt={service.title}
-                      className="service-icon service-icon-image w-16 h-16 rounded-full object-cover"
-                      style={{ background: `${service.color}20` }}
-                    />
-                  ) : (
-                    <div
-                      className="service-icon w-16 h-16 rounded-full flex items-center justify-center"
-                      style={{ background: `${service.color}20`, color: service.color }}
-                    >
-                      {service.icon}
-                    </div>
-                  )}
-                </div>
-                <h3 className="service-title text-xl md:text-2xl font-semibold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="service-description text-muted-foreground text-base leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            </ScrollAnimate>
-          ))}
-        </div>
+      
       </div>
     </section>
 
@@ -647,7 +617,7 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
+      {/* <section className="testimonials-section">
         <div className="section-container">
           <ScrollAnimate animation="fade-up" className="section-header">
             <h2 className="section-title">Khách hàng nói gì về chúng tôi</h2>
@@ -674,7 +644,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="cta-section">

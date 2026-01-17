@@ -154,7 +154,7 @@ export default function FeaturesDetail() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="py-8 md:py-16">
+    <div ref={sectionRef} className="">
       <div className="mx-auto">
         <div>
           
