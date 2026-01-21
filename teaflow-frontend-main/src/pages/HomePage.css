@@ -394,12 +394,13 @@
   font-weight: 800;
   line-height: 1.2;
   color: white;
+  font-family: 'Helvetica';
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  background: #2F80ED;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -682,7 +683,7 @@
 .about-stat-number {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #2F80ED;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1326,7 +1327,7 @@
 /* CTA Section */
 .cta-section {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1352,8 +1353,7 @@
 }
 
 .cta-title {
-  font-size: 3rem;
-  font-weight: 700;
+
   color: white;
   margin-bottom: 1.5rem;
 }
@@ -1366,7 +1366,7 @@
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
 }

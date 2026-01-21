@@ -159,7 +159,7 @@ const Features = () => {
   return (
     <div className="features-page">
       {/* Hero Section */}
-      <section className="features-hero">
+      <section className="features-hero"  style={{ backgroundImage: "url('/public/feature.png')" }}>
         <div className="features-hero-content">
           <ScrollAnimate animation="fade-up">
             <h1 className="features-hero-title">
@@ -169,6 +169,7 @@ const Features = () => {
               TEAFLOW cung cấp đầy đủ các công cụ cần thiết để quản lý toàn diện doanh nghiệp F&B của bạn. 
               Từ bán hàng, thanh toán đến quản lý kho và báo cáo - tất cả trong một nền tảng duy nhất.
             </p>
+            <button className='text-white'>Khám phá ngay</button>
           </ScrollAnimate>
         </div>
         <div className="features-hero-pattern"></div>

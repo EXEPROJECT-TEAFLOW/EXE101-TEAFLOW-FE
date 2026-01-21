@@ -427,7 +427,7 @@ const HomePage = () => {
           <div className="about-content">
             <div className="about-text">
               <h2 className="section-title">
-                Về <span className="gradient-text">TEAFLOW</span>
+                Về <span  style={{color: '#2F80ED'}}>TEAFLOW</span>
               </h2>
               <p className="about-description">
                 TEAFLOW được thành lập với sứ mệnh giúp các doanh nghiệp F&B Việt Nam 
@@ -442,14 +442,14 @@ const HomePage = () => {
               </p>
               <div className="about-features">
                 <div className="about-feature-item">
-                  <div className="about-feature-icon">🎯</div>
+                 
                   <div>
                     <h4>Mục tiêu</h4>
                     <p>Giúp F&B Việt Nam phát triển bền vững</p>
                   </div>
                 </div>
                 <div className="about-feature-item">
-                  <div className="about-feature-icon">💪</div>
+                
                   <div>
                     <h4>Giá trị cốt lõi</h4>
                     <p>Đổi mới, Tin cậy, Tận tâm</p>
@@ -493,30 +493,6 @@ const HomePage = () => {
       {/* Feature Department Section */}
       <section className="departments-section">
        < FeatureDemo />
-        {/* <div className="section-container">
-          <ScrollAnimate animation="fade-up" className="section-header">
-            <h2 className="section-title">Feature Department</h2>
-            <p className="section-description">
-              Các phòng ban chuyên nghiệp của chúng tôi
-            </p>
-          </ScrollAnimate>
-          <div className="departments-grid">
-            {departments.map((dept, index) => (
-              <ScrollAnimate key={index} animation="bounce-in" delay={index * 0.1}>
-                <div className="department-card">
-                  <IconRenderer icon={dept.icon} iconUrl={(dept as any).iconUrl} alt={dept.title} className="department-icon" />
-                  <h3 className="department-title">{dept.title}</h3>
-                  <p className="department-description">{dept.description}</p>
-                  <div className="department-count">
-                    <span className="count-number">{dept.count}</span>
-                    <span className="count-label">{dept.label}</span>
-                  </div>
-                </div>
-              </ScrollAnimate>
-            ))}
-          </div>
-        </div> */}
-        
       </section>
 
       {/* Featured Services Section */}
@@ -524,7 +500,7 @@ const HomePage = () => {
       <div className="section-container container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <ScrollAnimate animation="fade-up" className="section-header text-center mb-12">
           <h2 className="section-title text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
-            Dịch Vụ Nổi Bật
+           CÁC TÍNH NĂNG NỔI BẬT
           </h2>
           <p className="section-description text-lg md:text-xl text-muted-foreground mt-4">
             Những tính năng cốt lõi giúp chủ quán trà sữa vận hành chuyên nghiệp và tăng trưởng nhanh chóng.
@@ -647,15 +623,17 @@ const HomePage = () => {
       </section> */}
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section className="cta-section"   style={{ backgroundImage: "url('/public/BG.png')" }}>
         <div className="section-container">
           <ScrollAnimate animation="fade-up" className="cta-content">
-            <h2 className="cta-title">Sẵn sàng bắt đầu?</h2>
-            <p className="cta-description">
-              Dùng thử miễn phí 14 ngày. Không cần thẻ tín dụng. Hủy bất cứ lúc nào.
-            </p>
+<h2 className="cta-title text-4xl md:text-5xl font-bold text-center">
+  <span className="block">BẠN ĐÃ SẴN SÀNG</span>
+  <span className="block">ĐỂ TRẢI NGHIỆM?</span>
+</h2>
+
+           
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary btn-large">Bắt đầu ngay</a>
+              <a href="/contact" className="btn btn-primary btn-large">Đăng kí ngay!</a>
               <a href="/about" className="btn btn-outline btn-large">Liên hệ tư vấn</a>
             </div>
           </ScrollAnimate>
